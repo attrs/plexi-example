@@ -1,0 +1,90 @@
+{
+	"preferences": {
+		"plexi.mongodb": {			
+			"instances": {
+				"example": {
+				}
+			}
+		},
+		"plexi.php": {			
+		},
+		"plexi.tomcat": {			
+		},
+		"plexi.workbench": {			
+			"workbenches": {
+				"admin": {
+					"docbase": "www/admin"
+				},
+				"test": {
+					"docbase": "www/admin",
+					"server": {
+						"host": "system.attrs.io",
+						"port": 9443,
+						"docbase": "www/admin"
+					}
+				}
+			}
+		},
+		"plexi.http": {
+			"listeners": [
+				{
+					"port": 9443
+				}
+			],
+			"servers": {
+				"front": {
+					"docbase": {
+						"127.0.0.1": "www/front",
+						"localhost": "www/front",
+						"attrs.io": "www/front",
+						"www.attrs.io": "www/front",
+						"m.attrs.io": "www/mobile"
+					}
+				},
+				"admin": {
+					"host": "admin.attrs.io",
+					"port": 9443,
+					"buckets": {
+						"plexi.workbench:admin": "/"
+					}
+				},
+				"proxy": {
+					"host": "proxy.attrs.io",
+					"forward": "http://google.com/"
+				},
+				"subdomains": {
+					"host": "*.attrs.io",
+					"docbase": "www/subdomains/:1",
+					"compress": true,
+					"charset": "utf8",
+					"session": {
+						"type": "default",
+						"resave": true,
+						"saveUninitialized": true,
+						"secret": "tlzmflt"
+					},
+					"mount": {
+						"./bower_components": "/bower"
+					},
+					"statuspage": true,
+					"logging": {
+						"access": ":date - :method :status :url :remote-addr [:res[content-length] :referrer :user-agent :response-time ms]",
+						"error": ":date - :method :status :url :remote-addr [:res[content-length] :referrer :user-agent :response-time ms]",
+						"console": true,
+						"stack": true,
+						"web": true
+					},
+					"executer": {
+						"*.php": "php",
+						"*.jsp": "tomcat",
+						"*.do": "tomcat",
+						"*.jsx": "jsx",
+						"/servlets/*": "tomcat",
+						"/WEB-INF/*": false
+					},
+					"buckets": "*"
+				}
+			}
+		}
+	}
+}
