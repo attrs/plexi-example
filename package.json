@@ -1,26 +1,29 @@
 {
-	"name": "plexi-example",
-	"description": "plexi-example",
-	"version": "0.0.0",
-	"scripts": {
-		"install": "node ./node_modules/plexi/bin/plexi install && bower install",
-		"update": "node ./node_modules/plexi/bin/plexi update",
-		"start": "node ./node_modules/plexi/bin/plexi start"
-	},
-	"private": true,
-	"dependencies": {
-		"plexi": "~0.1.0"
-	},
-	"plexi": {
-		"activator": "activator.js",
-		"dependencies": {
-			"plexi.http": "*",
-			"plexi.workbench": "*",
-			"plexi.mongodb": "*",
-			"plexi.php": "*",
-			"plexi.tomcat": "*",
-			"plexi.redis": "*",
-			"ui-aliens": "*"
-		}
-	}
+  "name": "plexi-example",
+  "description": "plexi-example",
+  "version": "0.0.0",
+  "scripts": {
+    "install": "node ./node_modules/plexi/bin/plexi install && bower install",
+    "update": "node ./node_modules/plexi/bin/plexi update",
+    "start": "node ./node_modules/plexi/bin/plexi start"
+  },
+  "private": true,
+  "dependencies": {
+    "consolidate": "^0.10.0",
+    "jade": "^1.9.1",
+    "plexi": "~0.1.0",
+    "swig": "^1.4.2"
+  },
+  "plexi": {
+    "activator": "activator.js",
+    "dependencies": {
+      "plexi.http": "*",
+      "plexi.workbench": "*",
+      "plexi.mongodb": "*",
+      "plexi.php": "*",
+      "plexi.tomcat": "*",
+      "plexi.redis": "*",
+      "ui-aliens": "*"
+    }
+  }
 }

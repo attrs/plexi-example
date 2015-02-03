@@ -1,13 +1,5 @@
 {
 	"preferences": {
-		"plexi.mongodb": {			
-			"instances": {
-				"example": {
-				}
-			}
-		},
-		"plexi.php": {			
-		},
 		"plexi.tomcat": {			
 		},
 		"plexi.workbench": {			
@@ -25,7 +17,7 @@
 				}
 			}
 		},
-		"plexi.http": {
+		"_plexi.http": {
 			"listeners": [
 				{
 					"port": 9443
@@ -74,13 +66,8 @@
 						"stack": true,
 						"web": true
 					},
-					"executer": {
-						"*.php": "php",
-						"*.jsp": "tomcat",
-						"*.do": "tomcat",
-						"*.jsx": "jsx",
-						"/servlets/*": "tomcat",
-						"/WEB-INF/*": false
+					"filter": {
+						"**/*.do": "tomcat"
 					},
 					"buckets": "*"
 				}
