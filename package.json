@@ -9,6 +9,7 @@
   },
   "private": true,
   "dependencies": {
+    "chalk": "^0.5.1",
     "consolidate": "^0.10.0",
     "jade": "^1.9.1",
     "plexi": "~0.1.0",
@@ -22,7 +23,7 @@
       "plexi.mongodb": "*",
       "plexi.php": "*",
       "plexi.tomcat": "*",
-      "plexi.redis": "*",
+      "plexi.wordpress": "*",
       "ui-aliens": "*"
     }
   }

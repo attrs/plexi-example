@@ -1,18 +1,17 @@
 {
 	"preferences": {
-		"plexi.tomcat": {			
+		"plexi.tomcat": {
+			"env": {
+				"JAVA_OPTS": "-Djava.awt.headless=true -XX:+UseConcMarkSweepGC -server -XX:MaxPermSize=384m"
+			},
+			"port": 29090
 		},
 		"plexi.workbench": {			
 			"workbenches": {
 				"admin": {
-					"docbase": "www/admin"
-				},
-				"test": {
-					"docbase": "www/admin",
-					"server": {
-						"host": "system.attrs.io",
-						"port": 9443,
-						"docbase": "www/admin"
+					"docbase": "www.admin",
+					"mount": {
+						"path": "/"
 					}
 				}
 			}
@@ -25,28 +24,20 @@
 			],
 			"servers": {
 				"front": {
+					"host": ["127.0.0.1", "localhost"],
+					"port": 9000,
 					"docbase": {
-						"127.0.0.1": "www/front",
-						"localhost": "www/front",
-						"attrs.io": "www/front",
-						"www.attrs.io": "www/front",
-						"m.attrs.io": "www/mobile"
-					}
-				},
-				"admin": {
-					"host": "admin.attrs.io",
-					"port": 9443,
-					"buckets": {
-						"plexi.workbench:admin": "/"
-					}
-				},
-				"proxy": {
-					"host": "proxy.attrs.io",
-					"forward": "http://google.com/"
-				},
-				"subdomains": {
-					"host": "*.attrs.io",
-					"docbase": "www/subdomains/:1",
+						"127.0.0.1": "www",
+						"localhost": "www"
+					},
+					"statuspage": true,
+					"logging": {
+						"access": ":date - :method :status :url :remote-addr [:res[content-length] :referrer :user-agent :response-time ms]",
+						"error": ":date - :method :status :url :remote-addr [:res[content-length] :referrer :user-agent :response-time ms]",
+						"console": true,
+						"stack": true,
+						"web": true
+					},
 					"compress": true,
 					"charset": "utf8",
 					"session": {
@@ -58,18 +49,15 @@
 					"mount": {
 						"./bower_components": "/bower"
 					},
-					"statuspage": true,
-					"logging": {
-						"access": ":date - :method :status :url :remote-addr [:res[content-length] :referrer :user-agent :response-time ms]",
-						"error": ":date - :method :status :url :remote-addr [:res[content-length] :referrer :user-agent :response-time ms]",
-						"console": true,
-						"stack": true,
-						"web": true
-					},
 					"filter": {
 						"**/*.do": "tomcat"
 					},
-					"buckets": "*"
+					"mappings": "*"
+				},
+				"admin": {
+					"host": "localhost",
+					"port": 9443,
+					"docbase": "www.admin"
 				}
 			}
 		}
