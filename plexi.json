@@ -1,5 +1,15 @@
 {
 	"preferences": {
+		"plexi.wordpress": {
+			"instances": {
+				"test": {
+					"docbase": "wordpress",
+					"mount": {
+						"path": "/"
+					}
+				}
+			}
+		},
 		"plexi.tomcat": {
 			"env": {
 				"JAVA_OPTS": "-Djava.awt.headless=true -XX:+UseConcMarkSweepGC -server -XX:MaxPermSize=384m"
@@ -11,7 +21,7 @@
 				"admin": {
 					"docbase": "www.admin",
 					"mount": {
-						"path": "/"
+						"path": "/admin"
 					}
 				}
 			}

@@ -1,0 +1,21 @@
+{
+	title: 'Admin Example',
+	pages: [
+		{
+			type: 'html',
+			title: 'PHP',
+			icon: 'book',
+			src: 'index.php'
+		}, {
+			type: 'html',
+			title: 'Node.js',
+			icon: 'book',
+			src: 'index.node.js'
+		}, {
+			type: 'html',
+			title: 'JSP',
+			icon: 'book',
+			src: 'index.jsp'
+		}
+	]
+}
