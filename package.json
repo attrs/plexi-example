@@ -11,6 +11,8 @@
   "dependencies": {
     "chalk": "^0.5.1",
     "consolidate": "^0.10.0",
+    "ejs": "^2.2.4",
+    "ejs-locals": "^1.0.2",
     "jade": "^1.9.1",
     "plexi": "~0.1.0",
     "swig": "^1.4.2"

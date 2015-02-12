@@ -1,11 +1,12 @@
 {
+	"env": {},
 	"preferences": {
 		"plexi.wordpress": {
 			"instances": {
 				"test": {
 					"docbase": "wordpress",
 					"mount": {
-						"path": "/"
+						"path": "/wp"
 					}
 				}
 			}
@@ -16,7 +17,7 @@
 			},
 			"port": 29090
 		},
-		"plexi.workbench": {			
+		"plexi.workbench": {
 			"workbenches": {
 				"admin": {
 					"docbase": "www.admin",
@@ -34,7 +35,10 @@
 			],
 			"servers": {
 				"front": {
-					"host": ["127.0.0.1", "localhost"],
+					"host": [
+						"127.0.0.1",
+						"localhost"
+					],
 					"port": 9000,
 					"docbase": {
 						"127.0.0.1": "www",
@@ -70,6 +74,19 @@
 					"docbase": "www.admin"
 				}
 			}
+		},
+		"plexi.http": {
+			"workbenches": {
+				"admin": {
+					"docbase": "www.admin",
+					"mount": {
+						"path": "/admin"
+					}
+				}
+			}
+		},
+		"plexi.webconsole": {
+			"port": 19000
 		}
 	}
 }

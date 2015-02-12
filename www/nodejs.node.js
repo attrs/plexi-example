@@ -1,3 +1,5 @@
 module.exports = function(req, res, next) {
-	res.send('nodejs controller');
+	req.parse();
+	
+	res.send('nodejs controller:' + req.app.server + ':' + req.bucket);
 };
